@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TGshka HOS — Privacy Policy</title>
+<link rel="alternate" hreflang="ru" href="ru/">
+<style>
+:root { color-scheme: light dark; --fg: #1c1c1e; --bg: #ffffff; --muted: #5e5e62; --line: #d1d1d6; --link: #0b6bb3; }
+@media (prefers-color-scheme: dark) { :root { --fg: #f2f2f7; --bg: #000000; --muted: #a0a0a5; --line: #3a3a3c; --link: #6ab3f3; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; }
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+h1 { font-size: 1.7rem; line-height: 1.25; } h2 { font-size: 1.25rem; margin-top: 2rem; }
+a { color: var(--link); } .meta { color: var(--muted); }
+.table { overflow-x: auto; } table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 0.92rem; }
+th, td { border: 1px solid var(--line); padding: 0.45rem 0.55rem; vertical-align: top; text-align: left; }
+th { background: color-mix(in srgb, var(--line) 35%, transparent); }
+</style>
+</head>
+<body>
+<main>
+<h1>TGshka HOS — Privacy Policy</h1>
+<p class="meta"><em>Version 1 · effective 4 October 2026 · revised 21 October 2026 (more precise; nothing more is collected) · <a href="ru/">Русская версия</a></em></p>
+<p>TGshka HOS is an unofficial Telegram client for HarmonyOS watches. It is not affiliated with, endorsed by or supported by Telegram. It talks to Telegram through the official Telegram API (the TDLib library).</p>
+<p>This document says what happens to your data when you use the app. The short version: <strong>the developer of TGshka HOS has no servers and receives nothing from the app</strong> — no account data, no messages, no analytics, no crash reports, no advertising identifiers. Everything the app handles stays on your watch or travels between your watch and Telegram.</p>
+<h2>1. Who is responsible for what</h2>
+<div class="table"><table><thead><tr><th>Party</th><th>Role</th></tr></thead><tbody>
+<tr><td>You</td><td>Decide to sign in to your Telegram account on the watch and what to send.</td></tr>
+<tr><td>Telegram</td><td>Operates the service your account, chats and files live in. Telegram processes your data under its own <a href="https://telegram.org/privacy">Privacy Policy</a> and <a href="https://telegram.org/tos">Terms of Service</a>.</td></tr>
+<tr><td>The developer of TGshka HOS</td><td>Publishes the app. Does not operate any server the app connects to and does not collect, receive, store or share personal data from the app.</td></tr>
+</tbody></table></div>
+<h2>2. What the app processes, and where</h2>
+<div class="table"><table><thead><tr><th>Data</th><th>Why</th><th>Where it goes</th><th>Where it is kept</th></tr></thead><tbody>
+<tr><td>Phone number, login code, two-step password, QR login token</td><td>Signing in to your Telegram account</td><td>Telegram's servers</td><td>The password and code are not stored; the session key Telegram issues is kept in TDLib's database in the app's private storage on the watch, encrypted (section 8; if a watch cannot use its keystore, with TDLib's built-in key)</td></tr>
+<tr><td>Messages, chats, contacts, profile data, media files of your account</td><td>Showing and sending them — the purpose of the app</td><td>Telegram's servers</td><td>A local cache in the app's private storage on the watch, limited in size (Settings → Data), removed when you log out. The messages are in TDLib's encrypted database; downloaded files are kept as they are</td></tr>
+<tr><td>Voice recordings</td><td>Voice messages you choose to send</td><td>Telegram's servers, as part of the message</td><td>A temporary file on the watch until the message is sent or cancelled (a recording interrupted by leaving the app is kept as a draft of its chat until you send or delete it, or close the chat); a sent one is removed within a week, at once when you log out or clear the cache (except one still being sent: it is removed within the week)</td></tr>
+<tr><td>Voice messages you play</td><td>Playing them</td><td>Nowhere</td><td>A decoded copy in the app's cache (64 MB at most), removed when you log out or clear the cache</td></tr>
+<tr><td>Speech for dictation</td><td>Turning speech into text you can edit and send</td><td><strong>Nowhere</strong> — speech is recognised on the watch</td><td>Not kept</td></tr>
+<tr><td>Voice messages you ask to transcribe</td><td>Showing their words</td><td><strong>Nowhere</strong> when a speech model for the language is on the watch — recognised there; otherwise Telegram's own transcription is asked for (Telegram Premium), as in Telegram's apps</td><td>A temporary sound file on the watch, removed at once; the text stays with the message, in the app's memory only, until the app is closed</td></tr>
+<tr><td>Location</td><td>Only when you tap "send location" in a chat and confirm</td><td>Telegram's servers, as part of the message</td><td>Not kept</td></tr>
+<tr><td>Settings (language, notification choices, quick replies, proxy list)</td><td>Running the app the way you set it up</td><td>Nowhere</td><td>The app's private storage on the watch</td></tr>
+<tr><td>The app's own Telegram key (api_hash) and the key that checks taps on the watch-face card</td><td>Talking to Telegram; opening only chats the card itself shows</td><td>Nowhere</td><td>The system's keystore (if a watch cannot use it: the app's private storage)</td></tr>
+<tr><td>Proxy addresses and secrets you enter</td><td>Connecting to Telegram where it is not reachable directly</td><td>The proxy server you configured receives Telegram's (encrypted) traffic</td><td>Addresses: the app's private storage on the watch; secrets and passwords: the system's keystore (if a watch cannot use it: the app's private storage)</td></tr>
+<tr><td>Diagnostics log (connection events, error codes; no message texts, phone numbers, codes or passwords)</td><td>Finding problems; shown only on the watch under About when you turn it on</td><td>Nowhere</td><td>Memory only; gone when the app closes. In the system's log the variable parts of the app's lines are marked private (lines of its native part carry error texts only)</td></tr>
+<tr><td>A note of an app failure (the kind of error and the place in the code; no data)</td><td>Saying what went wrong at the next start</td><td>Nowhere</td><td>The app's private storage, until the next start, when it is put in the diagnostics log and deleted</td></tr>
+<tr><td>Watch-face card (when placed): the number of unread chats, the names of up to two chats and — unless message text is hidden in the settings — their last message, and the time it was seen</td><td>Showing them on the watch face</td><td>Nowhere</td><td>The app's private storage, replaced with every update</td></tr>
+<tr><td>Notification bookkeeping: the numbers of the messages already announced, when the app was last running</td><td>Not announcing a message twice; telling you when the app has stopped</td><td>Nowhere</td><td>The app's private storage</td></tr>
+</tbody></table></div>
+<p>The app contains no advertising or analytics software of its own. In channels, Telegram may show its own "sponsored messages"; they are delivered by Telegram under Telegram's rules, and the app reports to Telegram that one was shown or opened, as Telegram's API terms require.</p>
+<h2>3. Other network connections</h2>
+<p>Besides Telegram (directly or through a proxy you configured), the app connects to:</p>
+<ul><li><strong>huggingface.co</strong> or its mirror <strong>hf-mirror.com</strong> — only if you ask the app to download an optional Whisper dictation model (Settings → Dictation). The request contains nothing about you beyond what any download reveals (your IP address).</li><li><strong>A proxy bridge page</strong> — only if you add a proxy of the "web proxy" type; the address is the one you entered.</li><li><strong>Your phone on the same Wi-Fi network</strong> — only while you use "Add proxy from phone": the watch shows a one-time address and code, and the page you open on the phone sends the proxy link to the watch. Nothing leaves your local network.</li></ul>
+<h2>4. Permissions</h2>
+<div class="table"><table><thead><tr><th>Permission</th><th>Used for</th><th>When it is asked</th></tr></thead><tbody>
+<tr><td>Internet, network state</td><td>Talking to Telegram</td><td>Granted by the system at install</td></tr>
+<tr><td>Notifications</td><td>Telling you about new messages</td><td>After you have signed in</td></tr>
+<tr><td>Microphone</td><td>Recording voice messages; dictation</td><td>The first time you record or dictate</td></tr>
+<tr><td>Location (approximate / precise)</td><td>Sending your location to a chat</td><td>The first time you send a location</td></tr>
+<tr><td>Vibration</td><td>Notification and scrolling feedback</td><td>Granted by the system at install</td></tr>
+<tr><td>Running in the background</td><td>Keeping the connection to Telegram so messages arrive while the app is not on screen (Settings → Background; can be turned off)</td><td>Granted by the system at install</td></tr>
+</tbody></table></div>
+<p>The app works without the microphone and location permissions; only the features that need them are unavailable.</p>
+<h2>5. How long data is kept, and how to delete it</h2>
+<ul><li><strong>Log out</strong> (Settings → Accounts) ends the session with Telegram and erases that account's data from the watch. If the watch cannot reach Telegram at that moment, the data and the session key are erased from the watch all the same (after about half a minute), and the session stays in your Telegram account's list of devices — end it from another device (Telegram Settings → Devices).</li><li><strong>Clearing the cache</strong> (Settings → Data) removes downloaded files.</li><li><strong>Uninstalling the app</strong> removes everything the app stored.</li><li><strong>Your Telegram account itself</strong> is not affected by any of the above. It is deleted with Telegram, at <a href="https://telegram.org/deactivate">https://telegram.org/deactivate</a>; the app shows this address under Settings → About → Privacy → Delete Telegram account.</li></ul>
+<p>The app takes no part in the system's own backup feature: nothing it stores — not your Telegram session, not the message cache, not its settings — is put into a backup or carried to another device.</p>
+<h2>6. Your rights</h2>
+<p>Because the developer holds no data about you, requests to access, correct, export or erase personal data cannot be answered by the developer — there is nothing to look up. For the data in your Telegram account, use Telegram's own tools and contacts (see Telegram's Privacy Policy). For the data on your watch, use the controls in section 5. If you believe this app handles your data unlawfully you may also complain to the data-protection authority of your country.</p>
+<h2>7. Children</h2>
+<p>The app is a client for Telegram and can be used only with a Telegram account. Telegram's Terms of Service set the minimum age for an account; the app is not directed at children below that age.</p>
+<h2>8. Security</h2>
+<p>Traffic between the app and Telegram is encrypted by Telegram's MTProto protocol, implemented by the TDLib library. Account data on the watch is stored in the app's private storage, which other apps cannot read. TDLib's database (the session and the messages) is encrypted with a random key that only this watch's keystore holds, available after the watch's first unlock (a watch whose keystore cannot be used keeps the database with TDLib's own built-in key). Proxy secrets, login codes, passwords and phone numbers are never written to logs.</p>
+<h2>9. Changes</h2>
+<p>A change of substance to this policy gets a new version number; the app asks you to accept the new version before it continues. The published policy: <a href="https://duremarus148.github.io/tgshka-hos-privacy/">https://duremarus148.github.io/tgshka-hos-privacy/</a>; its history: the commits of <a href="https://github.com/duremarus148/tgshka-hos-privacy">https://github.com/duremarus148/tgshka-hos-privacy</a>.</p>
+<h2>10. Contact</h2>
+<p>Questions and requests: open an issue at <a href="https://github.com/duremarus148/tgshka-hos-privacy/issues">https://github.com/duremarus148/tgshka-hos-privacy/issues</a>.</p>
+<p class="meta"><a href="ru/">Русская версия</a></p>
+</main>
+</body>
+</html>
