@@ -1,13 +1,13 @@
 {
-  "version": 3,
-  "prepared": "2026-11-02",
+  "version": 4,
+  "prepared": "2026-11-15",
   "url": "https://duremarus148.github.io/tgshka-hos-privacy/",
   "languages": [
     "en",
     "ru"
   ],
   "sha256": {
-    "index.html": "991ca5d7fbf1714982d68e8141ee4f71e3e5d19e6bc56f3eef11b77d11248a9d",
-    "ru/index.html": "fd17bd4135455adeedd70fdb4ddebf3c5c21b331a7e1c75ea2cb85f49f39de5d"
+    "index.html": "9264212fe821ca5305c729c556acf3204a84cce5dde5c37ffee4767248fa0100",
+    "ru/index.html": "c5ecd580cf9832f949748ca3082054e2023b27cc8042e80c829d4394f5e07bf8"
   }
 }
